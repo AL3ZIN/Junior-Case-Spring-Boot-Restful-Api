@@ -26,10 +26,9 @@ public class CarroRepositoryPortImpl implements CarroRepositoryPort {
     }
 
     @Override
-    public Long save(Carro carro) {
+    public Carro save(Carro carro) {
         var entity = CarroOutMapper.toEntity(carro);
-        carroRepository.save(entity);
-        return entity.getId();
+        return CarroOutMapper.toModel(carroRepository.save(entity));
     }
 
     @Override
@@ -57,7 +56,7 @@ public class CarroRepositoryPortImpl implements CarroRepositoryPort {
     }
 
     @Override
-    public boolean existsByChassiOrPlacaAndAtivoIsTrue(String chassi, String placa) {
-        return carroRepository.existsByChassiOrPlacaAndAtivoIsTrue(chassi, placa);
+    public boolean existsByChassiAndPlacaAndAtivoTrue(String chassi, String placa) {
+        return carroRepository.existsByChassiAndPlacaAndAtivoTrue(chassi, placa);
     }
 }

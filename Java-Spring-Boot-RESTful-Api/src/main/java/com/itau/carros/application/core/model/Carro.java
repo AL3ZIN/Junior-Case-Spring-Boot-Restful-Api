@@ -3,6 +3,8 @@ package com.itau.carros.application.core.model;
 import com.itau.carros.application.core.enums.Status;
 
 public class Carro {
+
+    private Long id;
     private String chassi;
     private String name;
     private String manufacturer;
@@ -12,6 +14,13 @@ public class Carro {
     private String placa;
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getChassi() {
         return chassi;
@@ -68,4 +77,5 @@ public class Carro {
     public void setPlaca(String placa) {
         this.placa = placa;
     }
+
 }

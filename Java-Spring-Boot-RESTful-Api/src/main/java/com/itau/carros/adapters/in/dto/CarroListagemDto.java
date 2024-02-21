@@ -1,10 +1,45 @@
 package com.itau.carros.adapters.in.dto;
 
-import java.util.List;
+import com.itau.carros.application.core.enums.Status;
+import org.springframework.hateoas.RepresentationModel;
 
-public class CarroListagemDto {
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+public class CarroListagemDto extends RepresentationModel<CarroListagemDto> {
+
+    Long id;
+    private String chassi;
+    private String name;
     private String manufacturer;
-    private List<CarroDto> carros;
+    private Integer year;
+    private String color;
+    private Status status;
+    private String placa;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getChassi() {
+        return chassi;
+    }
+
+    public void setChassi(String chassi) {
+        this.chassi = chassi;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getManufacturer() {
         return manufacturer;
@@ -14,11 +49,35 @@ public class CarroListagemDto {
         this.manufacturer = manufacturer;
     }
 
-    public List<CarroDto> getCarros() {
-        return carros;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setCarros(List<CarroDto> carros) {
-        this.carros = carros;
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 }

@@ -21,5 +21,5 @@ public interface CarroRepository extends JpaRepository<CarroEntity, Long>, JpaSp
     Page<CarroEntity> findByAtivoTrue(Specification<CarroEntity> carroEntitySpecification, Pageable pageable);
     Optional<CarroEntity> findByIdAndAtivoTrue(Long id);
 
-    boolean existsByChassiOrPlacaAndAtivoIsTrue(String chassi, String placa);
+    boolean existsByChassiAndPlacaAndAtivoTrue(String chassi, String placa);
 }

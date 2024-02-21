@@ -1,25 +1,24 @@
 package com.itau.carros.adapters.in.manager;
 
-import com.itau.carros.adapters.in.dto.CarroDto;
-import com.itau.carros.adapters.in.dto.CarroFiltroDto;
-import com.itau.carros.adapters.in.dto.CarroListagemDto;
-import com.itau.carros.adapters.in.dto.CarroUpdateStatusDto;
+import com.itau.carros.adapters.in.controller.CarroController;
+import com.itau.carros.adapters.in.dto.*;
 import com.itau.carros.adapters.in.mapper.CarroInMapper;
-import com.itau.carros.application.core.enums.Status;
-import com.itau.carros.application.core.vo.CriteriosDeBusca;
 import com.itau.carros.application.ports.in.CreateCarroUseCasePort;
 import com.itau.carros.application.ports.in.DeleteCarroUseCasePort;
 import com.itau.carros.application.ports.in.GetCarroUseCasePort;
 import com.itau.carros.application.ports.in.UpdateCarroUseCasePort;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Component
 public class CarroDataManager {
@@ -36,39 +35,47 @@ public class CarroDataManager {
         this.deleteCarroUseCasePort = deleteCarroUseCasePort;
     }
 
-    public Long cadastrar(CarroDto dto){
-        return createCarroUseCasePort.cadastrar(CarroInMapper.toModel(dto));
+    public CarroListagemDto cadastrar(CarroDto dto){
+        var entitySaved = createCarroUseCasePort.cadastrar(CarroInMapper.toModel(dto));
+        return  CarroInMapper.toDto(entitySaved) ;
     }
 
-    public List<CarroListagemDto> listar(){
-        Map<String, List<CarroDto>> groupedByManufacturer = getCarroUseCasePort.listar().stream()
-                .map(CarroInMapper::toDto)
-                .collect(Collectors.groupingBy(CarroDto::getManufacturer)) ;
+    public List<CarroListagemAgrupadaDto> listar(){
 
+        Map<String, List<CarroListagemDto>> groupedByManufacturer = getCarroUseCasePort.listar().stream()
+                .map(CarroInMapper::toDto)
+                .collect(Collectors.groupingBy(CarroListagemDto::getManufacturer)) ;
+
+        Link link = linkTo(methodOn(CarroController.class)).slash(1).withSelfRel();
         return groupedByManufacturer.entrySet().stream()
                 .map(entry -> {
-                    List<CarroDto> sortedCars = entry.getValue().stream()
-                            .sorted(Comparator.comparing(CarroDto::getName)
-                                    .thenComparing(CarroDto::getYear, Comparator.reverseOrder()))
+                    List<CarroListagemDto> sortedCarros = entry.getValue().stream()
+                            .sorted(Comparator.comparing(CarroListagemDto::getName)
+                                    .thenComparing(CarroListagemDto::getYear, Comparator.reverseOrder()))
                             .collect(Collectors.toList());
-                    return CarroInMapper.toDto(entry.getKey(), sortedCars);
+                    return CarroInMapper.toDto(entry.getKey(), sortedCarros);
                 })
-                .sorted(Comparator.comparing(CarroListagemDto::getManufacturer))
+                .sorted(Comparator.comparing(CarroListagemAgrupadaDto::getManufacturer))
                 .collect(Collectors.toList());
 
     }
 
-    public CarroDto detalhar(Long id){
-        return CarroInMapper.toDto(getCarroUseCasePort.detalhar(id));
+    public Optional<EntityModel<CarroListagemDto>> detalhar(Long id){
+        return Optional.ofNullable(getCarroUseCasePort.detalhar(id))
+                .map(carro -> {
+                    CarroListagemDto carroDto = CarroInMapper.toDto(carro);
+                    Link link = linkTo(methodOn(CarroController.class).detalhar(id)).withSelfRel();
+                    return EntityModel.of(carroDto, link);
+                });
     }
 
-    public List<CarroDto> filtrar(CarroFiltroDto dto){
+    public List<CarroListagemDto> filtrar(CarroFiltroDto dto){
         return getCarroUseCasePort.filtrar(CarroInMapper.toModel(dto)).stream()
                 .map(CarroInMapper::toDto)
                 .collect(Collectors.toList());
     }
 
-    public CarroDto atualizarStatus(CarroUpdateStatusDto dto){
+    public CarroListagemDto atualizarStatus(CarroUpdateStatusDto dto){
         return CarroInMapper.toDto(updateCarroUseCasePort.atualizarStatus(dto.getId(),dto.getStatus()));
     }
 

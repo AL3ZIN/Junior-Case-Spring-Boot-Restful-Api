@@ -1,17 +1,19 @@
 package com.itau.carros.adapters.in.mapper;
 
+import com.itau.carros.adapters.in.controller.CarroController;
 import com.itau.carros.adapters.in.dto.CarroDto;
 import com.itau.carros.adapters.in.dto.CarroFiltroDto;
+import com.itau.carros.adapters.in.dto.CarroListagemAgrupadaDto;
 import com.itau.carros.adapters.in.dto.CarroListagemDto;
 import com.itau.carros.application.core.model.Carro;
 import com.itau.carros.application.core.vo.CriteriosDeBusca;
+import org.springframework.hateoas.Link;
 
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 import static org.springframework.beans.BeanUtils.copyProperties;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 public class CarroInMapper {
 
@@ -21,14 +23,20 @@ public class CarroInMapper {
         return model;
     }
 
-    public static CarroDto toDto(Carro model) {
-        var dto = new CarroDto();
+    public static CarroListagemDto toDto(Carro model) {
+        var dto = new CarroListagemDto();
+        var link = linkTo(methodOn(CarroController.class).detalhar(model.getId())).withSelfRel();
         copyProperties(model, dto);
-        return dto;
+        return dto.add(link);
     }
 
-    public static CarroListagemDto toDto(String manufacturer, List<CarroDto> carros){
-        var dto = new CarroListagemDto();
+
+    public static CarroListagemAgrupadaDto toDto(String manufacturer, List<CarroListagemDto> carros){
+        var dto = new CarroListagemAgrupadaDto();
+        carros.forEach(c ->{
+            Link link = linkTo(methodOn(CarroController.class).detalhar(c.getId())).withSelfRel();
+        });
+
         dto.setManufacturer(manufacturer);
         dto.setCarros(carros);
         return dto;

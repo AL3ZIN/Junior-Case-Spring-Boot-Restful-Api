@@ -1,8 +1,11 @@
 package com.itau.carros.mock;
 
-import com.itau.carros.adapters.in.dto.CarroDto;
+import com.itau.carros.adapters.in.dto.*;
 import com.itau.carros.application.core.enums.Status;
 import com.itau.carros.application.core.model.Carro;
+import com.itau.carros.application.core.validations.ValidacaoCadastroCarro;
+import com.itau.carros.application.core.validations.ValidacaoCarroJaCadastrado;
+import org.springframework.hateoas.EntityModel;
 
 import java.util.Collections;
 import java.util.List;
@@ -51,6 +54,56 @@ public class MockSingleton {
         carroDto.setColor("Amarelo");
         carroDto.setPlaca("placadto1");
         return carroDto;
+    }
+
+    public List<CarroDto> getCarroDtoList(){
+        return Collections.singletonList(getCarroDto());
+    }
+
+    public CarroListagemAgrupadaDto getCarroListagemAgrupadaDto(){
+        CarroListagemAgrupadaDto carroListagemDto = new CarroListagemAgrupadaDto();
+        carroListagemDto.setCarros(getCarroListagemDtoList());
+        carroListagemDto.setManufacturer(getCarroDto().getManufacturer());
+        return carroListagemDto;
+    }
+    public List<CarroListagemAgrupadaDto> getCarroListagemAgrupadaDtoList(){
+        return Collections.singletonList(getCarroListagemAgrupadaDto());
+    }
+
+    public CarroFiltroDto getCarroFiltroDto(){
+        CarroFiltroDto carroFiltroDto = new CarroFiltroDto();
+        carroFiltroDto.setName("Fusca");
+        carroFiltroDto.setManufacturer("Lamborghini");
+        carroFiltroDto.setYear(2024);
+        return carroFiltroDto;
+    }
+
+    public CarroUpdateStatusDto getCarroUpdateStatusDto() {
+        var carroUpdateStatusDto = new CarroUpdateStatusDto();
+        carroUpdateStatusDto.setStatus(Status.DEACTIVATED);
+        carroUpdateStatusDto.setId(1L);
+        return carroUpdateStatusDto;
+    }
+
+    public CarroListagemDto getCarroListagemDto(){
+        var carroListagemDto = new CarroListagemDto();
+        carroListagemDto.setId(1L);
+        carroListagemDto.setChassi("chassiDto1");
+        carroListagemDto.setStatus(Status.RENTED);
+        carroListagemDto.setName("Camaro");
+        carroListagemDto.setYear(2021);
+        carroListagemDto.setManufacturer("Chevrolet");
+        carroListagemDto.setColor("Amarelo");
+        carroListagemDto.setPlaca("placadto1");
+        return carroListagemDto;
+    }
+
+    public List<CarroListagemDto> getCarroListagemDtoList() {
+        return Collections.singletonList(getCarroListagemDto());
+    }
+
+    public Optional<EntityModel<CarroListagemDto>> getOptionalEntityModelCarroListagemDto(){
+        return Optional.of(EntityModel.of(getCarroListagemDto()));
     }
 }
 

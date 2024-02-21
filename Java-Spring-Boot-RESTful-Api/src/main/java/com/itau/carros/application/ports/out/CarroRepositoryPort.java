@@ -4,13 +4,14 @@ import com.itau.carros.application.core.model.Carro;
 import com.itau.carros.application.core.vo.CriteriosDeBusca;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
 
 
 public interface CarroRepositoryPort {
-    Long save(Carro carro);
+    Carro save(Carro carro);
 
     List<Carro> findAllByAtivoTrue();
 
@@ -20,5 +21,6 @@ public interface CarroRepositoryPort {
 
     void delete(Long id);
 
-    boolean existsByChassiOrPlacaAndAtivoIsTrue(String chassi, String placa);
+    boolean existsByChassiAndPlacaAndAtivoTrue(String chassi, String placa);
+
 }

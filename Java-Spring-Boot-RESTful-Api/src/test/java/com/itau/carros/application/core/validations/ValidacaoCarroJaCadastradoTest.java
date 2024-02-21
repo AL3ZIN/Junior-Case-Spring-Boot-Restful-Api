@@ -10,6 +10,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -30,23 +32,23 @@ class ValidacaoCarroJaCadastradoTest {
     void devePermitirCadastroDeCarroNaoCadastrado(){
 
         //ARRANGE
-        when(carroRepositoryPort.existsByChassiOrPlacaAndAtivoIsTrue(carro.getChassi(), carro.getPlaca()))
+        when(carroRepositoryPort.existsByChassiAndPlacaAndAtivoTrue(carro.getChassi(), carro.getPlaca()))
                 .thenReturn(false);
 
         //ACT + ASSERT
         assertDoesNotThrow(() -> validacaoCarroJaCadastrado.validar(carro));
-        verify(carroRepositoryPort, times(1)).existsByChassiOrPlacaAndAtivoIsTrue(carro.getChassi(), carro.getPlaca());
+        verify(carroRepositoryPort, times(1)).existsByChassiAndPlacaAndAtivoTrue(carro.getChassi(), carro.getPlaca());
     }
 
     @Test
     void naoDevePermitirCadastroDeCarroJaCadastrado(){
 
         //ARRANGE
-        when(carroRepositoryPort.existsByChassiOrPlacaAndAtivoIsTrue(carro.getChassi(), carro.getPlaca()))
+        when(carroRepositoryPort.existsByChassiAndPlacaAndAtivoTrue(carro.getChassi(), carro.getPlaca()))
                 .thenReturn(true);
 
         //ACT + ASSERT
         assertThrows(CarroJaCadastradoException.class,() -> validacaoCarroJaCadastrado.validar(carro));
-        verify(carroRepositoryPort, times(1)).existsByChassiOrPlacaAndAtivoIsTrue(carro.getChassi(), carro.getPlaca());
+        verify(carroRepositoryPort, times(1)).existsByChassiAndPlacaAndAtivoTrue(carro.getChassi(), carro.getPlaca());
     }
 }

@@ -23,7 +23,7 @@ public class CreateCarroUseCaseImpl implements CreateCarroUseCasePort {
     }
 
     @Override
-    public Long cadastrar(Carro carro) {
+    public Carro cadastrar(Carro carro) {
         validacoes.forEach(v-> v.validar(carro));
         return carroRepositoryPort.save(carro);
     }
