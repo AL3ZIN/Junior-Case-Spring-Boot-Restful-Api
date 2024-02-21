@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("carro")
+@RequestMapping("api/carro")
 public class CarroController {
 
     private final CarroDataManager dataManager;
@@ -29,7 +29,7 @@ public class CarroController {
     @PostMapping
     @Transactional
     public ResponseEntity<CarroDto> cadastrar(@RequestBody @Valid CarroDto dto, UriComponentsBuilder uriBuilder){
-        var uri = uriBuilder.path("carro/{id}")
+        var uri = uriBuilder.path("api/carro/{id}")
                 .buildAndExpand(dataManager.cadastrar(dto))
                 .toUri();
         return ResponseEntity.created(uri).body(dto);
