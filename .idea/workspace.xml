@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2b0600ed-9fa6-48d3-8249-c4503f340b3d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/response/ExceptionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/response/ExceptionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
