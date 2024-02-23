@@ -49,6 +49,15 @@ Em seguida, vá ao diretório onde contém o arquivo <b>docker-compose.yml</b> e
 <br>
 Dessa forma, a aplicação já estará funcionando e pode ser executado os testes automatizados da maneira como preferir.
 
+# Diagrama de Classes
+
+![image](https://github.com/AL3ZIN/Junior-Case-Spring-Boot-Restful-Api/blob/main/JuniorCaseDiagram.png)
+
+Ademais construi tambem uma diagrama de classes que exemplifica o funcionamento da API de uma forma visível.
+<br>
+Você pode visualizar nao só pela imagem nesta documentação mas tambem baixar o arquivo neste link: https://github.com/AL3ZIN/Junior-Case-Spring-Boot-Restful-Api/blob/main/juniorCaseDiagram.drawio e abri-lo no site draw.io (mais recomendado)
+
+
 # Considerações Finais
 
 Além das tecnologias principais documentadas anteriormente, este projeto também adota várias metodologias e práticas recomendadas para garantir qualidade, escalabilidade e manutenibilidade do código. Entre elas, destacam-se:
