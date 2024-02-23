@@ -36,12 +36,10 @@ public class CarroInMapper {
         carros.forEach(c ->{
             Link link = linkTo(methodOn(CarroController.class).detalhar(c.getId())).withSelfRel();
         });
-
         dto.setManufacturer(manufacturer);
         dto.setCarros(carros);
         return dto;
     }
-
 
     public static CriteriosDeBusca toModel(CarroFiltroDto dto) {
         var model = new CriteriosDeBusca();

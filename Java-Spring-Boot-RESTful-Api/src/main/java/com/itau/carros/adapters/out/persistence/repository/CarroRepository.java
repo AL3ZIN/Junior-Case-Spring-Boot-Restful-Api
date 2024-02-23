@@ -18,8 +18,6 @@ import java.util.Optional;
 @Repository
 public interface CarroRepository extends JpaRepository<CarroEntity, Long>, JpaSpecificationExecutor<CarroEntity>{
     List<CarroEntity> findAllByAtivoTrue();
-    Page<CarroEntity> findByAtivoTrue(Specification<CarroEntity> carroEntitySpecification, Pageable pageable);
     Optional<CarroEntity> findByIdAndAtivoTrue(Long id);
-
     boolean existsByChassiAndPlacaAndAtivoTrue(String chassi, String placa);
 }

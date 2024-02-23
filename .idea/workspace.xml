@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b0600ed-9fa6-48d3-8249-c4503f340b3d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/usecase/CreateCarroUseCaseImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/usecase/CreateCarroUseCaseImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

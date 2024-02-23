@@ -2,6 +2,7 @@ package com.itau.carros.application.core.usecase;
 
 import com.itau.carros.application.core.model.Carro;
 import com.itau.carros.application.core.validations.ValidacaoCadastroCarro;
+import com.itau.carros.application.core.validations.ValidacaoCarroJaCadastrado;
 import com.itau.carros.application.ports.out.CarroRepositoryPort;
 import com.itau.carros.mock.MockSingleton;
 import org.junit.jupiter.api.Test;
@@ -23,8 +24,9 @@ class CreateCarroUseCaseImplTest {
 
     @Mock
     private CarroRepositoryPort carroRepositoryPort;
+
     @Mock
-    Carro carro;
+    private List<ValidacaoCarroJaCadastrado> validacoes = new ArrayList<>();
 
     MockSingleton mockSingleton = MockSingleton.getInstance();
 
