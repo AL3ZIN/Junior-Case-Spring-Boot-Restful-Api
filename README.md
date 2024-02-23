@@ -49,7 +49,7 @@ Em seguida, vá ao diretório onde contém o arquivo <b>docker-compose.yml</b> e
 <br>
 Dessa forma, a aplicação já estará funcionando e pode ser executado os testes automatizados da maneira como preferir.
 
-## Considerações Finais
+# Considerações Finais
 
 Além das tecnologias principais documentadas anteriormente, este projeto também adota várias metodologias e práticas recomendadas para garantir qualidade, escalabilidade e manutenibilidade do código. Entre elas, destacam-se:
 
