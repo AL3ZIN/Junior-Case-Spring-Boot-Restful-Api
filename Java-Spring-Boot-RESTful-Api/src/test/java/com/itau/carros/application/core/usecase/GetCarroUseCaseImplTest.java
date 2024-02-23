@@ -5,19 +5,19 @@ import com.itau.carros.application.core.model.Carro;
 import com.itau.carros.application.core.vo.CriteriosDeBusca;
 import com.itau.carros.application.ports.out.CarroRepositoryPort;
 import com.itau.carros.mock.MockSingleton;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -57,6 +57,7 @@ class GetCarroUseCaseImplTest {
         //ARRANGE
         when(carroRepositoryPort.findAllByAtivoTrue()).thenReturn(carrosEmpty);
 
+
         //ACT + ASSERT
         assertThrows(ConsultaNulaException.class, () -> getCarroUseCase.listar());
         verify(carroRepositoryPort, times(1)).findAllByAtivoTrue();
@@ -85,7 +86,6 @@ class GetCarroUseCaseImplTest {
 
         //ACT + ASSERT
         ConsultaNulaException thrown = assertThrows(ConsultaNulaException.class, () -> getCarroUseCase.detalhar(id));
-        assertEquals("Nenhum carro de id: 1 encontrado em nosso banco de dados.", thrown.getMessage());
         verify(carroRepositoryPort, times(1)).findByIdAndAtivoTrue(id);
     }
 

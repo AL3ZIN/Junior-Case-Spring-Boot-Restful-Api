@@ -23,9 +23,8 @@ class CreateCarroUseCaseImplTest {
 
     @Mock
     private CarroRepositoryPort carroRepositoryPort;
-
     @Mock
-    List<ValidacaoCadastroCarro> validacoes = new ArrayList<>();
+    Carro carro;
 
     MockSingleton mockSingleton = MockSingleton.getInstance();
 
@@ -39,7 +38,7 @@ class CreateCarroUseCaseImplTest {
         // Ação
         Carro carroSalvo = createCarroUseCase.cadastrar(carro);
 
-        verify(carroRepositoryPort, times(1)).save(carro); // Verifica se o carro foi salvo
+        verify(carroRepositoryPort, times(1)).save(carro);
     }
 
 

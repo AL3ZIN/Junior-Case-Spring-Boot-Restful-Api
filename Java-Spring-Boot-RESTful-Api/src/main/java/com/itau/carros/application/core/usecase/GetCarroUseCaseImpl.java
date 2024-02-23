@@ -5,17 +5,17 @@ import com.itau.carros.application.core.model.Carro;
 import com.itau.carros.application.core.vo.CriteriosDeBusca;
 import com.itau.carros.application.ports.in.GetCarroUseCasePort;
 import com.itau.carros.application.ports.out.CarroRepositoryPort;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class GetCarroUseCaseImpl implements GetCarroUseCasePort {
 
     private final CarroRepositoryPort carroRepositoryPort;
+
+
+
 
     public GetCarroUseCaseImpl(CarroRepositoryPort carroRepositoryPort) {
         this.carroRepositoryPort = carroRepositoryPort;
