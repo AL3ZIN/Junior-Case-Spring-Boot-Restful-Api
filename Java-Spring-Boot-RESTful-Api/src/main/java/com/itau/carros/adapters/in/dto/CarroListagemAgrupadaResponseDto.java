@@ -1,12 +1,12 @@
 package com.itau.carros.adapters.in.dto;
 
-import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.EntityModel;
 
 import java.util.List;
 
-public class CarroListagemAgrupadaDto {
+public class CarroListagemAgrupadaResponseDto {
     private String manufacturer;
-    private List<CarroListagemDto> carros;
+    private List<EntityModel<CarroListagemResponseDto>> carros;
 
     public String getManufacturer() {
         return manufacturer;
@@ -16,11 +16,11 @@ public class CarroListagemAgrupadaDto {
         this.manufacturer = manufacturer;
     }
 
-    public List<CarroListagemDto> getCarros() {
+    public List<EntityModel<CarroListagemResponseDto>> getCarros() {
         return carros;
     }
 
-    public void setCarros(List<CarroListagemDto> carros) {
+    public void setCarros(List<EntityModel<CarroListagemResponseDto>> carros) {
         this.carros = carros;
     }
 }

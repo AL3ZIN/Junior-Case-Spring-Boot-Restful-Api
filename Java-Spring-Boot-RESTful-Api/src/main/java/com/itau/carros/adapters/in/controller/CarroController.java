@@ -3,13 +3,13 @@ package com.itau.carros.adapters.in.controller;
 import com.itau.carros.adapters.in.dto.*;
 import com.itau.carros.adapters.in.manager.CarroDataManager;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import javax.transaction.Transactional;
-import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +28,7 @@ public class CarroController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<CarroListagemDto> cadastrar(@RequestBody @Valid CarroDto dto, UriComponentsBuilder uriBuilder){
+    public ResponseEntity<EntityModel<CarroListagemResponseDto>> cadastrar(@RequestBody @Valid CarroRequestDto dto, UriComponentsBuilder uriBuilder){
         var dtoListagem = dataManager.cadastrar(dto);
         var uri = uriBuilder.path("api/carro")
                 .buildAndExpand().toUri();
@@ -36,23 +36,23 @@ public class CarroController {
     }
 
     @GetMapping
-    public ResponseEntity<List<CarroListagemAgrupadaDto>> listar(){
+    public ResponseEntity<List<CarroListagemAgrupadaResponseDto>> listar(){
        return ResponseEntity.ok(dataManager.listar());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<EntityModel<CarroListagemDto>>> detalhar(@PathVariable Long id){
+    public ResponseEntity<Optional<EntityModel<CarroListagemResponseDto>>> detalhar(@PathVariable Long id){
             return ResponseEntity.ok(dataManager.detalhar(id));
     }
 
     @GetMapping("filtrar")
-    public ResponseEntity<List<CarroListagemDto>> filtrar(@ModelAttribute CarroFiltroDto dto){
+    public ResponseEntity<List<EntityModel<CarroListagemResponseDto>>> filtrar(@ModelAttribute CarroFiltroRequestDto dto){
        return ResponseEntity.ok(dataManager.filtrar(dto));
     }
 
     @PutMapping
     @Transactional
-    public ResponseEntity<CarroListagemDto> atualizarStatus(@RequestBody @Valid CarroUpdateStatusDto dto){
+    public ResponseEntity<EntityModel<CarroListagemResponseDto>> atualizarStatus(@RequestBody @Valid CarroUpdateStatusRequestDto dto){
         return ResponseEntity.ok(dataManager.atualizarStatus(dto));
     }
 

@@ -1,14 +1,13 @@
 package com.itau.carros.adapters.in.manager;
 
-import com.itau.carros.adapters.in.controller.CarroController;
 import com.itau.carros.adapters.in.dto.*;
+import com.itau.carros.adapters.in.hateoas.CarroListagemDtoAssembler;
 import com.itau.carros.adapters.in.mapper.CarroInMapper;
 import com.itau.carros.application.ports.in.CreateCarroUseCasePort;
 import com.itau.carros.application.ports.in.DeleteCarroUseCasePort;
 import com.itau.carros.application.ports.in.GetCarroUseCasePort;
 import com.itau.carros.application.ports.in.UpdateCarroUseCasePort;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.Link;
 import org.springframework.stereotype.Component;
 
 import java.util.Comparator;
@@ -18,7 +17,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Component
 public class CarroDataManager {
@@ -27,59 +25,67 @@ public class CarroDataManager {
     private final GetCarroUseCasePort getCarroUseCasePort;
     private final UpdateCarroUseCasePort updateCarroUseCasePort;
     private final DeleteCarroUseCasePort deleteCarroUseCasePort;
+    private final CarroInMapper mapper;
+    private final CarroListagemDtoAssembler assembler;
 
-    public CarroDataManager(CreateCarroUseCasePort createCarroUseCasePort, GetCarroUseCasePort getCarroUseCasePort, UpdateCarroUseCasePort updateCarroUseCasePort, DeleteCarroUseCasePort deleteCarroUseCasePort) {
+    public CarroDataManager(CreateCarroUseCasePort createCarroUseCasePort, GetCarroUseCasePort getCarroUseCasePort, UpdateCarroUseCasePort updateCarroUseCasePort, DeleteCarroUseCasePort deleteCarroUseCasePort, CarroInMapper mapper, CarroListagemDtoAssembler carroListagemDtoAssembler) {
         this.createCarroUseCasePort = createCarroUseCasePort;
         this.getCarroUseCasePort = getCarroUseCasePort;
         this.updateCarroUseCasePort = updateCarroUseCasePort;
         this.deleteCarroUseCasePort = deleteCarroUseCasePort;
+        this.mapper = mapper;
+        this.assembler = carroListagemDtoAssembler;
     }
 
-    public CarroListagemDto cadastrar(CarroDto dto){
-        var entitySaved = createCarroUseCasePort.cadastrar(CarroInMapper.toModel(dto));
-        return  CarroInMapper.toDto(entitySaved) ;
+    public EntityModel<CarroListagemResponseDto> cadastrar(CarroRequestDto dto){
+        var entitySaved = createCarroUseCasePort.cadastrar(mapper.toModel(dto));
+        return  assembler.toModel(mapper.toDto(entitySaved)) ;
     }
 
-    public List<CarroListagemAgrupadaDto> listar(){
+    public List<CarroListagemAgrupadaResponseDto> listar(){
 
-        Map<String, List<CarroListagemDto>> groupedByManufacturer = getCarroUseCasePort.listar().stream()
-                .map(CarroInMapper::toDto)
-                .collect(Collectors.groupingBy(CarroListagemDto::getManufacturer)) ;
+        Map<String, List<EntityModel<CarroListagemResponseDto>>> groupedByManufacturer = getCarroUseCasePort.listar().stream()
+                .map(mapper::toDto)
+                .map(assembler::toModel)
+                .collect(Collectors.groupingBy(dto -> dto.getContent().getManufacturer())) ;
 
-        Link link = linkTo(methodOn(CarroController.class)).slash(1).withSelfRel();
         return groupedByManufacturer.entrySet().stream()
-                .map(entry -> {
-                    List<CarroListagemDto> sortedCarros = entry.getValue().stream()
-                            .sorted(Comparator.comparing(CarroListagemDto::getName)
-                                    .thenComparing(CarroListagemDto::getYear, Comparator.reverseOrder()))
-                            .collect(Collectors.toList());
-                    return CarroInMapper.toDto(entry.getKey(), sortedCarros);
-                })
-                .sorted(Comparator.comparing(CarroListagemAgrupadaDto::getManufacturer))
+                .map(entry -> criarCarroListagemAgrupadaDto(entry.getKey(), entry.getValue()))
+                .sorted(Comparator.comparing(CarroListagemAgrupadaResponseDto::getManufacturer))
                 .collect(Collectors.toList());
-
     }
 
-    public Optional<EntityModel<CarroListagemDto>> detalhar(Long id){
+    public Optional<EntityModel<CarroListagemResponseDto>> detalhar(Long id){
         return Optional.ofNullable(getCarroUseCasePort.detalhar(id))
-                .map(carro -> {
-                    CarroListagemDto carroDto = CarroInMapper.toDto(carro);
-                    Link link = linkTo(methodOn(CarroController.class).detalhar(id)).withSelfRel();
-                    return EntityModel.of(carroDto, link);
-                });
+                .map(mapper::toDto)
+                .map(assembler::toModel);
     }
 
-    public List<CarroListagemDto> filtrar(CarroFiltroDto dto){
-        return getCarroUseCasePort.filtrar(CarroInMapper.toModel(dto)).stream()
-                .map(CarroInMapper::toDto)
+    public List<EntityModel<CarroListagemResponseDto>> filtrar(CarroFiltroRequestDto dto){
+        return getCarroUseCasePort.filtrar(mapper.toModel(dto)).stream()
+                .map(mapper::toDto)
+                .map(assembler::toModel)
                 .collect(Collectors.toList());
     }
 
-    public CarroListagemDto atualizarStatus(CarroUpdateStatusDto dto){
-        return CarroInMapper.toDto(updateCarroUseCasePort.atualizarStatus(dto.getId(),dto.getStatus()));
+    public EntityModel<CarroListagemResponseDto> atualizarStatus(CarroUpdateStatusRequestDto dto){
+        return assembler.toModel(mapper.toDto(updateCarroUseCasePort.atualizarStatus(dto.getId(),dto.getStatus())));
     }
 
     public void excluir(Long id){
         deleteCarroUseCasePort.excluir(id);
     }
+
+
+    private CarroListagemAgrupadaResponseDto criarCarroListagemAgrupadaDto(String manufacturer, List<EntityModel<CarroListagemResponseDto>> carrosModel) {
+        // Ordena os carros por nome e depois por ano em ordem decrescente, mantendo a estrutura EntityModel
+        List<EntityModel<CarroListagemResponseDto>> sortedCarros = carrosModel.stream()
+                .sorted(Comparator.comparing((EntityModel<CarroListagemResponseDto> em) -> em.getContent().getName())
+                        .thenComparing(em -> em.getContent().getYear(), Comparator.reverseOrder()))
+                .collect(Collectors.toList());
+        return mapper.toDto(manufacturer, sortedCarros);
+    }
+
 }
+
+

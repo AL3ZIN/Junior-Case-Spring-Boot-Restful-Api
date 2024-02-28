@@ -1,11 +1,9 @@
 package com.itau.carros.adapters.in.dto;
 
 import com.itau.carros.application.core.enums.Status;
+import jakarta.validation.constraints.NotNull;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-public class CarroUpdateStatusDto {
+public class CarroUpdateStatusRequestDto {
     @NotNull
     Long id;
 

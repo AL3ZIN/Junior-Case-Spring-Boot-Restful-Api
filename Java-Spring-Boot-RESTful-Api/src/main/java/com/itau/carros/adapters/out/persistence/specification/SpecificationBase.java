@@ -1,9 +1,9 @@
 package com.itau.carros.adapters.out.persistence.specification;
 
 import com.itau.carros.adapters.out.persistence.entity.CarroEntity;
+import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 
-import javax.persistence.criteria.Predicate;
 
 public abstract class SpecificationBase<E, C> {
 

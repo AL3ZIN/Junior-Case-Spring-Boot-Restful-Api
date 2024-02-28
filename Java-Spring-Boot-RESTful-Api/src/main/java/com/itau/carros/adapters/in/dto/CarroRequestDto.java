@@ -1,29 +1,25 @@
 package com.itau.carros.adapters.in.dto;
 
 import com.itau.carros.application.core.enums.Status;
-import org.springframework.hateoas.RepresentationModel;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
-public class CarroListagemDto extends RepresentationModel<CarroListagemDto> {
-
-    Long id;
+public class CarroRequestDto {
+    @NotBlank
     private String chassi;
+    @NotBlank
     private String name;
+    @NotBlank
     private String manufacturer;
+    @NotNull
     private Integer year;
+    @NotBlank
     private String color;
+    @NotNull
     private Status status;
+    @NotBlank
     private String placa;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getChassi() {
         return chassi;

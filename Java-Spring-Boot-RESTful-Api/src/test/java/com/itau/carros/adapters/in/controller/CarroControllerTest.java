@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -33,7 +34,7 @@ class CarroControllerTest {
 
         // ARRANGE
         String json = new ObjectMapper().writeValueAsString(mockSingleton.getCarroDto());
-        when(dataManager.cadastrar(mockSingleton.getCarroDto())).thenReturn(MockSingleton.getInstance().getCarroListagemDto());
+        when(dataManager.cadastrar(mockSingleton.getCarroDto())).thenReturn(mockSingleton.getInstance().getCarroListagemDto());
 
         // ACT + ASSERT
         mockMvc.perform(

@@ -3,8 +3,6 @@ package com.itau.carros.mock;
 import com.itau.carros.adapters.in.dto.*;
 import com.itau.carros.application.core.enums.Status;
 import com.itau.carros.application.core.model.Carro;
-import com.itau.carros.application.core.validations.ValidacaoCadastroCarro;
-import com.itau.carros.application.core.validations.ValidacaoCarroJaCadastrado;
 import org.springframework.hateoas.EntityModel;
 
 import java.util.Collections;
@@ -44,8 +42,8 @@ public class MockSingleton {
         return Collections.singletonList(getCarro());
     }
 
-    public CarroDto getCarroDto(){
-        CarroDto carroDto = new CarroDto();
+    public CarroRequestDto getCarroDto(){
+        CarroRequestDto carroDto = new CarroRequestDto();
         carroDto.setChassi("chassiDto1");
         carroDto.setStatus(Status.RENTED);
         carroDto.setName("Camaro");
@@ -56,37 +54,37 @@ public class MockSingleton {
         return carroDto;
     }
 
-    public List<CarroDto> getCarroDtoList(){
+    public List<CarroRequestDto> getCarroDtoList(){
         return Collections.singletonList(getCarroDto());
     }
 
-    public CarroListagemAgrupadaDto getCarroListagemAgrupadaDto(){
-        CarroListagemAgrupadaDto carroListagemDto = new CarroListagemAgrupadaDto();
+    public CarroListagemAgrupadaResponseDto getCarroListagemAgrupadaDto(){
+        CarroListagemAgrupadaResponseDto carroListagemDto = new CarroListagemAgrupadaResponseDto();
         carroListagemDto.setCarros(getCarroListagemDtoList());
         carroListagemDto.setManufacturer(getCarroDto().getManufacturer());
         return carroListagemDto;
     }
-    public List<CarroListagemAgrupadaDto> getCarroListagemAgrupadaDtoList(){
+    public List<CarroListagemAgrupadaResponseDto> getCarroListagemAgrupadaDtoList(){
         return Collections.singletonList(getCarroListagemAgrupadaDto());
     }
 
-    public CarroFiltroDto getCarroFiltroDto(){
-        CarroFiltroDto carroFiltroDto = new CarroFiltroDto();
+    public CarroFiltroRequestDto getCarroFiltroDto(){
+        CarroFiltroRequestDto carroFiltroDto = new CarroFiltroRequestDto();
         carroFiltroDto.setName("Fusca");
         carroFiltroDto.setManufacturer("Lamborghini");
         carroFiltroDto.setYear(2024);
         return carroFiltroDto;
     }
 
-    public CarroUpdateStatusDto getCarroUpdateStatusDto() {
-        var carroUpdateStatusDto = new CarroUpdateStatusDto();
+    public CarroUpdateStatusRequestDto getCarroUpdateStatusDto() {
+        var carroUpdateStatusDto = new CarroUpdateStatusRequestDto();
         carroUpdateStatusDto.setStatus(Status.DEACTIVATED);
         carroUpdateStatusDto.setId(1L);
         return carroUpdateStatusDto;
     }
 
-    public CarroListagemDto getCarroListagemDto(){
-        var carroListagemDto = new CarroListagemDto();
+    public EntityModel<CarroListagemResponseDto> getCarroListagemDto(){
+        var carroListagemDto = new CarroListagemResponseDto();
         carroListagemDto.setId(1L);
         carroListagemDto.setChassi("chassiDto1");
         carroListagemDto.setStatus(Status.RENTED);
@@ -95,15 +93,15 @@ public class MockSingleton {
         carroListagemDto.setManufacturer("Chevrolet");
         carroListagemDto.setColor("Amarelo");
         carroListagemDto.setPlaca("placadto1");
-        return carroListagemDto;
+        return EntityModel.of(carroListagemDto);
     }
 
-    public List<CarroListagemDto> getCarroListagemDtoList() {
+    public List<EntityModel<CarroListagemResponseDto>> getCarroListagemDtoList() {
         return Collections.singletonList(getCarroListagemDto());
     }
 
-    public Optional<EntityModel<CarroListagemDto>> getOptionalEntityModelCarroListagemDto(){
-        return Optional.of(EntityModel.of(getCarroListagemDto()));
+    public Optional<EntityModel<CarroListagemResponseDto>> getOptionalEntityModelCarroListagemDto(){
+        return Optional.of(getCarroListagemDto());
     }
 }
 

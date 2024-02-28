@@ -2,11 +2,10 @@ package com.itau.carros.adapters.out.persistence.specification;
 
 import com.itau.carros.adapters.out.persistence.entity.CarroEntity;
 import com.itau.carros.application.core.vo.CriteriosDeBusca;
+import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
 

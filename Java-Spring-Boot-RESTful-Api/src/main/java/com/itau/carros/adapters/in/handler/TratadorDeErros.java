@@ -3,19 +3,16 @@ package com.itau.carros.adapters.in.handler;
 import com.itau.carros.adapters.in.response.ExceptionResponse;
 import com.itau.carros.application.core.exception.CarroJaCadastradoException;
 import com.itau.carros.application.core.exception.ConsultaNulaException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.Date;
-import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class TratadorDeErros {

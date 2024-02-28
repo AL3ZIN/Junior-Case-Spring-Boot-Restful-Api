@@ -1,6 +1,6 @@
 package com.itau.carros.adapters.in.dto;
 
-public class CarroFiltroDto {
+public class CarroFiltroRequestDto {
     private String name;
     private String manufacturer;
     private Integer year;
@@ -27,14 +27,5 @@ public class CarroFiltroDto {
 
     public void setYear(Integer year) {
         this.year = year;
-    }
-
-    @Override
-    public String toString() {
-        return "CarroFiltroDto{" +
-                "name='" + name + '\'' +
-                ", manufacturer='" + manufacturer + '\'' +
-                ", year=" + year +
-                '}';
     }
 }

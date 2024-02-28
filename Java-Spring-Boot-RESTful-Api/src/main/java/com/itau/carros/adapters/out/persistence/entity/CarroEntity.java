@@ -1,8 +1,7 @@
 package com.itau.carros.adapters.out.persistence.entity;
 
 import com.itau.carros.application.core.enums.Status;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "carro")

@@ -1,47 +1,43 @@
 package com.itau.carros.adapters.in.mapper;
 
-import com.itau.carros.adapters.in.controller.CarroController;
-import com.itau.carros.adapters.in.dto.CarroDto;
-import com.itau.carros.adapters.in.dto.CarroFiltroDto;
-import com.itau.carros.adapters.in.dto.CarroListagemAgrupadaDto;
-import com.itau.carros.adapters.in.dto.CarroListagemDto;
+import com.itau.carros.adapters.in.dto.CarroRequestDto;
+import com.itau.carros.adapters.in.dto.CarroFiltroRequestDto;
+import com.itau.carros.adapters.in.dto.CarroListagemAgrupadaResponseDto;
+import com.itau.carros.adapters.in.dto.CarroListagemResponseDto;
 import com.itau.carros.application.core.model.Carro;
 import com.itau.carros.application.core.vo.CriteriosDeBusca;
-import org.springframework.hateoas.Link;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 import static org.springframework.beans.BeanUtils.copyProperties;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+@Component
 public class CarroInMapper {
 
-    public static Carro toModel(CarroDto dto){
+    public Carro toModel(CarroRequestDto dto){
         var model = new Carro();
         copyProperties(dto,model);
         return model;
     }
 
-    public static CarroListagemDto toDto(Carro model) {
-        var dto = new CarroListagemDto();
-        var link = linkTo(methodOn(CarroController.class).detalhar(model.getId())).withSelfRel();
+    public CarroListagemResponseDto toDto(Carro model) {
+        var dto = new CarroListagemResponseDto();
         copyProperties(model, dto);
-        return dto.add(link);
+        return dto;
     }
 
 
-    public static CarroListagemAgrupadaDto toDto(String manufacturer, List<CarroListagemDto> carros){
-        var dto = new CarroListagemAgrupadaDto();
-        carros.forEach(c ->{
-            Link link = linkTo(methodOn(CarroController.class).detalhar(c.getId())).withSelfRel();
-        });
+    public CarroListagemAgrupadaResponseDto toDto(String manufacturer, List<EntityModel<CarroListagemResponseDto>> carros){
+        var dto = new CarroListagemAgrupadaResponseDto();
         dto.setManufacturer(manufacturer);
         dto.setCarros(carros);
         return dto;
     }
 
-    public static CriteriosDeBusca toModel(CarroFiltroDto dto) {
+    public CriteriosDeBusca toModel(CarroFiltroRequestDto dto) {
         var model = new CriteriosDeBusca();
         copyProperties(dto, model);
         System.out.println(model);

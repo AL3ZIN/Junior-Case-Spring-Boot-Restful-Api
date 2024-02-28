@@ -1,14 +1,18 @@
 package com.itau.carros.adapters.in.mapper;
 
-import com.itau.carros.adapters.in.dto.CarroDto;
+import com.itau.carros.adapters.in.dto.CarroRequestDto;
 import com.itau.carros.application.core.model.Carro;
 import com.itau.carros.mock.MockSingleton;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
+import static org.springframework.beans.BeanUtils.copyProperties;
 
+@ExtendWith(MockitoExtension.class)
 class CarroInMapperTest {
 
     @InjectMocks
@@ -18,9 +22,9 @@ class CarroInMapperTest {
 
     @Test
     void deveConverterCarroDtoParaCarro(){
-        CarroDto dto = mockSingleton.getCarroDto();
+        CarroRequestDto dto = mockSingleton.getCarroDto();
 
-        Carro model = CarroInMapper.toModel(dto);
+        Carro model = mapper.toModel(dto);
 
         assertEquals(dto.getChassi(), model.getChassi());
     }
@@ -29,7 +33,7 @@ class CarroInMapperTest {
     void deveConverterCarroFiltroDtoParaCriteriosDeBusca(){
         var dto = mockSingleton.getCarroFiltroDto();
 
-        var model = CarroInMapper.toModel(dto);
+        var model = mapper.toModel(dto);
 
         assertEquals(dto.getManufacturer(), model.getManufacturer());
     }
@@ -39,7 +43,7 @@ class CarroInMapperTest {
         var carros = mockSingleton.getCarroListagemDtoList();
         var manufacturer = "Volvo";
 
-        var model = CarroInMapper.toDto(manufacturer, carros);
+        var model = mapper.toDto(manufacturer, carros);
 
         assertEquals(manufacturer, model.getManufacturer());
     }
@@ -48,7 +52,7 @@ class CarroInMapperTest {
     void deveConverterCarroParaCarroListagemDto(){
         var model = mockSingleton.getCarro();
 
-        var dto = CarroInMapper.toDto(model);
+        var dto = mapper.toDto(model);
 
         assertEquals(model.getChassi(), dto.getChassi());
     }
