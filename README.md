@@ -7,19 +7,18 @@
 <br>
 
 # JaCoCo
-![image](https://github.com/AL3ZIN/Junior-Case-Spring-Boot-Restful-Api/blob/main/Java-Spring-Boot-RESTful-Api/assets/jaCoCo.png)
+![JaCoCo](./Java-Spring-Boot-RESTful-Api/assets/jaCoCo.png)
 
 Foi utilizado JaCoCo no projeto para mapear a cobertura de testes, uma vez que o JaCoCo nos mostra visualmente em porcentagem a cobertura de testes do nosso codigo, baseado em quantas linhas ja foram testadas.
 
 # HATEOAS
-![image](https://github.com/AL3ZIN/Junior-Case-Spring-Boot-Restful-Api/blob/main/Java-Spring-Boot-RESTful-Api/assets/Hateoas1.png)
+![HATEOAS](./Java-Spring-Boot-RESTful-Api/assets/Hateoas1.png)
 
 Foi utilizado o Hateoas no projeto para trazer uma resposta mais dinâmica as requisições da api, pois o HATEOAS depois de implementado faz com que as requisições voltem com seu link de detalhamento, ou seja, mostra onde pode ser consultado cada objeto retornado na requisição.
 <br>
 
 # Endpoints de Carros Cadastrados
-
-![image](https://github.com/AL3ZIN/Junior-Case-Spring-Boot-Restful-Api/blob/main/Java-Spring-Boot-RESTful-Api/assets/requisicoes.png)
+![Requisições](./Java-Spring-Boot-RESTful-Api/assets/requisicoes.png)
 
 ### GET - /api/carro/{id} | Consultar um cadastro.
 ### GET - /api/carro | Listar todos os cadastros.
@@ -29,7 +28,7 @@ Foi utilizado o Hateoas no projeto para trazer uma resposta mais dinâmica as re
 <br>
 
 # Docker
-![image](https://github.com/AL3ZIN/Junior-Case-Spring-Boot-Restful-Api/blob/main/Java-Spring-Boot-RESTful-Api/assets/docker.png)
+![Docker](./Java-Spring-Boot-RESTful-Api/assets/docker.png)
 
 Tanto a API quanto o Banco de Dados MySql foram Dockerizados durante o desenvolvimento e utiliza uma Stack do <b>Docker Compose</b> para provisionamento automático.
 <br><br>
@@ -50,8 +49,7 @@ Em seguida, vá ao diretório onde contém o arquivo <b>docker-compose.yml</b> e
 Dessa forma, a aplicação já estará funcionando e pode ser executado os testes automatizados da maneira como preferir.
 
 # Diagrama de Classes
-
-![image](https://github.com/AL3ZIN/Junior-Case-Spring-Boot-Restful-Api/blob/main/JuniorCaseDiagram.png)
+![Diagrama de Classes](./Java-Spring-Boot-RESTful-Api/assets/JuniorCaseDiagram.png)
 
 Ademais construi tambem uma diagrama de classes que exemplifica o funcionamento da API de uma forma visível.
 <br>
