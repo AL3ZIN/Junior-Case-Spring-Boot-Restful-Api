@@ -60,7 +60,7 @@ public class MockSingleton {
 
     public CarroListagemAgrupadaResponseDto getCarroListagemAgrupadaDto(){
         CarroListagemAgrupadaResponseDto carroListagemDto = new CarroListagemAgrupadaResponseDto();
-        carroListagemDto.setCarros(getCarroListagemDtoList());
+        carroListagemDto.setCarros(getEntityModelCarroListagemDtoList());
         carroListagemDto.setManufacturer(getCarroDto().getManufacturer());
         return carroListagemDto;
     }
@@ -83,7 +83,7 @@ public class MockSingleton {
         return carroUpdateStatusDto;
     }
 
-    public EntityModel<CarroListagemResponseDto> getCarroListagemDto(){
+    public CarroListagemResponseDto getCarroListagemDto(){
         var carroListagemDto = new CarroListagemResponseDto();
         carroListagemDto.setId(1L);
         carroListagemDto.setChassi("chassiDto1");
@@ -93,15 +93,23 @@ public class MockSingleton {
         carroListagemDto.setManufacturer("Chevrolet");
         carroListagemDto.setColor("Amarelo");
         carroListagemDto.setPlaca("placadto1");
-        return EntityModel.of(carroListagemDto);
+        return carroListagemDto;
+    }
+    public EntityModel<CarroListagemResponseDto> getEntityModelCarroListagemDto(){
+        return EntityModel.of(getCarroListagemDto());
     }
 
-    public List<EntityModel<CarroListagemResponseDto>> getCarroListagemDtoList() {
+
+    public List<CarroListagemResponseDto> getCarroListagemDtoList() {
         return Collections.singletonList(getCarroListagemDto());
     }
 
+    public List<EntityModel<CarroListagemResponseDto>> getEntityModelCarroListagemDtoList() {
+        return Collections.singletonList(getEntityModelCarroListagemDto());
+    }
+
     public Optional<EntityModel<CarroListagemResponseDto>> getOptionalEntityModelCarroListagemDto(){
-        return Optional.of(getCarroListagemDto());
+        return Optional.of(getEntityModelCarroListagemDto());
     }
 }
 

@@ -40,7 +40,7 @@ class CarroInMapperTest {
 
     @Test
     void deveConverterAtributosDtoParaCarroListagemAgrupadaDto(){
-        var carros = mockSingleton.getCarroListagemDtoList();
+        var carros = mockSingleton.getEntityModelCarroListagemDtoList();
         var manufacturer = "Volvo";
 
         var model = mapper.toDto(manufacturer, carros);

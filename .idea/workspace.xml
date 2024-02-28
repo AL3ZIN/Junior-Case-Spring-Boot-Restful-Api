@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b0600ed-9fa6-48d3-8249-c4503f340b3d" name="Changes" comment="">
+    <list default="true" id="6a30f4cf-0cdd-483e-b61a-cb9760a815ad" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/controller/CarroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/controller/CarroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroFiltroDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroFiltroRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroListagemAgrupadaDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroListagemAgrupadaResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroListagemDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroListagemResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroUpdateStatusDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroUpdateStatusRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/manager/CarroDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/manager/CarroDataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/mapper/CarroInMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/mapper/CarroInMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/adapters/in/controller/CarroControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/adapters/in/controller/CarroControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/adapters/in/mapper/CarroInMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/adapters/in/mapper/CarroInMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/mock/MockSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/mock/MockSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,34 +23,34 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2cgvZqfjX0SYoub43QckKnJmL1a" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2d0zLjlEd6KtsOWiYXEw91eNY5N" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Estudos/Projetos/Case Cloud/restfulapi&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2b0600ed-9fa6-48d3-8249-c4503f340b3d" name="Changes" comment="" />
-      <created>1708546094706</created>
+      <changelist id="6a30f4cf-0cdd-483e-b61a-cb9760a815ad" name="Changes" comment="" />
+      <created>1709159731272</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1708546094706</updated>
+      <updated>1709159731272</updated>
     </task>
     <servers />
   </component>

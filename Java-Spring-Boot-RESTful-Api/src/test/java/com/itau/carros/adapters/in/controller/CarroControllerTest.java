@@ -34,7 +34,7 @@ class CarroControllerTest {
 
         // ARRANGE
         String json = new ObjectMapper().writeValueAsString(mockSingleton.getCarroDto());
-        when(dataManager.cadastrar(mockSingleton.getCarroDto())).thenReturn(mockSingleton.getInstance().getCarroListagemDto());
+        when(dataManager.cadastrar(mockSingleton.getCarroDto())).thenReturn(mockSingleton.getEntityModelCarroListagemDto());
 
         // ACT + ASSERT
         mockMvc.perform(
@@ -73,7 +73,7 @@ class CarroControllerTest {
     void deveriaDevolverCodigo204ParaRequisicaoDeFiltrarCarro() throws Exception {
 
         // ARRANGE
-        when(dataManager.filtrar(mockSingleton.getCarroFiltroDto())).thenReturn(mockSingleton.getCarroListagemDtoList());
+        when(dataManager.filtrar(mockSingleton.getCarroFiltroDto())).thenReturn(mockSingleton.getEntityModelCarroListagemDtoList());
 
         // ACT + ASSERT
         mockMvc.perform(
