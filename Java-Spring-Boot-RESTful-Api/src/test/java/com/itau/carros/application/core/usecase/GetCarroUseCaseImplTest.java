@@ -2,6 +2,7 @@ package com.itau.carros.application.core.usecase;
 
 import com.itau.carros.application.core.exception.ConsultaNulaException;
 import com.itau.carros.application.core.model.Carro;
+import com.itau.carros.application.core.usecase.carro.GetCarroUseCaseImpl;
 import com.itau.carros.application.core.vo.CriteriosDeBusca;
 import com.itau.carros.application.ports.out.CarroRepositoryPort;
 import com.itau.carros.mock.MockSingleton;
@@ -9,10 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;

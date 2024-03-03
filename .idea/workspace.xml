@@ -5,10 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a30f4cf-0cdd-483e-b61a-cb9760a815ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/controller/CarroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/controller/CarroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroFiltroRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/carro/CarroFiltroRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroListagemAgrupadaResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/carro/CarroListagemAgrupadaResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroListagemResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/carro/CarroListagemResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/carro/CarroRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/CarroUpdateStatusRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/dto/carro/CarroUpdateStatusRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/handler/TratadorDeErros.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/handler/TratadorDeErros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/hateoas/CarroListagemDtoAssembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/hateoas/CarroListagemDtoAssembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/manager/CarroDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/service/CarroService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/mapper/CarroInMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/in/mapper/CarroInMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/out/persistence/mapper/CarroOutMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/out/persistence/mapper/CarroOutMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/out/persistence/repository/CarroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/out/persistence/repository/CarroRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/out/persistence/specification/SpecificationBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/out/persistence/specification/SpecificationBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/out/port/CarroRepositoryPortImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/adapters/out/port/CarroRepositoryPortImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/exception/CarroJaCadastradoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/exception/UnicidadeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/model/Carro.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/model/Carro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/usecase/CreateCarroUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/usecase/carro/CreateCarroUseCaseImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/usecase/DeleteCarroUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/usecase/carro/DeleteCarroUseCaseImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/usecase/GetCarroUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/usecase/carro/GetCarroUseCaseImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/usecase/UpdateCarroUseCaseImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/usecase/carro/UpdateCarroUseCaseImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/validations/ValidacaoCadastroCarro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/validations/ValidacaoCarroJaCadastrado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/core/validation/ValidacaoCarroJaCadastrado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/ports/in/CreateCarroUseCasePort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/ports/in/carro/CreateCarroUseCasePort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/ports/in/DeleteCarroUseCasePort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/ports/in/carro/DeleteCarroUseCasePort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/ports/in/GetCarroUseCasePort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/ports/in/carro/GetCarroUseCasePort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/ports/in/UpdateCarroUseCasePort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/ports/in/carro/UpdateCarroUseCasePort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/ports/out/CarroRepositoryPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/java/com/itau/carros/application/ports/out/CarroRepositoryPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/adapters/in/controller/CarroControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/adapters/in/controller/CarroControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/adapters/in/handler/TratadorDeErrosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/adapters/in/handler/TratadorDeErrosTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/adapters/in/mapper/CarroInMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/adapters/in/mapper/CarroInMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/usecase/CreateCarroUseCaseImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/usecase/CreateCarroUseCaseImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/usecase/DeleteCarroUseCaseImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/usecase/DeleteCarroUseCaseImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/usecase/GetCarroUseCaseImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/usecase/GetCarroUseCaseImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/usecase/UpdateCarroUseCaseImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/usecase/UpdateCarroUseCaseImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/validations/ValidacaoCarroJaCadastradoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/application/core/validation/ValidacaoCarroJaCadastradoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/mock/MockSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java/com/itau/carros/mock/MockSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -17,32 +51,146 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="enabledProfiles">
+      <list>
+        <option value="native" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2d0zLjlEd6KtsOWiYXEw91eNY5N" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CarrosApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TratadorDeErrosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TratadorDeErrosTest.tratarErro404Test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in carros.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [clean,package,-DskipTests].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.carros [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Estudos/Projetos/Case Cloud/restfulapi/Java-Spring-Boot-RESTful-Api/src/main/resources/db/migration&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.itau.carros.adapters.in.dto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Estudos\Projetos\Case Cloud\restfulapi\Java-Spring-Boot-RESTful-Api\src\main\resources\db\migration" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.itau.carros.adapters.in.mapper" />
+      <recent name="com.itau.carros.application.core.usecase" />
+      <recent name="com.itau.carros.application.core" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.itau.carros.application.core.validation" />
+      <recent name="com.itau.carros.adapters.in" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.CarrosApplication">
+    <configuration name="CarrosApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.itau.carros.CarrosApplication" />
+      <module name="carros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itau.carros.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TratadorDeErrosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="carros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itau.carros.adapters.in.handler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itau.carros.adapters.in.handler" />
+      <option name="MAIN_CLASS_NAME" value="com.itau.carros.adapters.in.handler.TratadorDeErrosTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TratadorDeErrosTest.tratarErro404Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="carros" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itau.carros.adapters.in.handler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itau.carros.adapters.in.handler" />
+      <option name="MAIN_CLASS_NAME" value="com.itau.carros.adapters.in.handler.TratadorDeErrosTest" />
+      <option name="METHOD_NAME" value="tratarErro404Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in carros" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="carros" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/Java-Spring-Boot-RESTful-Api/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CarrosApplication" />
+        <item itemvalue="JUnit.java in carros" />
+        <item itemvalue="JUnit.TratadorDeErrosTest" />
+        <item itemvalue="JUnit.TratadorDeErrosTest.tratarErro404Test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

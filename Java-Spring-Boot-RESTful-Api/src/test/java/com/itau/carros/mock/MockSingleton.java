@@ -1,6 +1,6 @@
 package com.itau.carros.mock;
 
-import com.itau.carros.adapters.in.dto.*;
+import com.itau.carros.adapters.in.dto.carro.*;
 import com.itau.carros.application.core.enums.Status;
 import com.itau.carros.application.core.model.Carro;
 import org.springframework.hateoas.EntityModel;
@@ -42,74 +42,74 @@ public class MockSingleton {
         return Collections.singletonList(getCarro());
     }
 
-    public CarroRequestDto getCarroDto(){
-        CarroRequestDto carroDto = new CarroRequestDto();
-        carroDto.setChassi("chassiDto1");
-        carroDto.setStatus(Status.RENTED);
-        carroDto.setName("Camaro");
-        carroDto.setYear(2021);
-        carroDto.setManufacturer("Chevrolet");
-        carroDto.setColor("Amarelo");
-        carroDto.setPlaca("placadto1");
-        return carroDto;
+    public CarroRequestDto getCarroRequestDto(){
+        CarroRequestDto carroRequestDto = new CarroRequestDto();
+        carroRequestDto.setChassi("chassiDto1");
+        carroRequestDto.setStatus(Status.RENTED);
+        carroRequestDto.setName("Camaro");
+        carroRequestDto.setYear(2021);
+        carroRequestDto.setManufacturer("Chevrolet");
+        carroRequestDto.setColor("Amarelo");
+        carroRequestDto.setPlaca("placadto1");
+        return carroRequestDto;
     }
 
     public List<CarroRequestDto> getCarroDtoList(){
-        return Collections.singletonList(getCarroDto());
+        return Collections.singletonList(getCarroRequestDto());
     }
 
-    public CarroListagemAgrupadaResponseDto getCarroListagemAgrupadaDto(){
-        CarroListagemAgrupadaResponseDto carroListagemDto = new CarroListagemAgrupadaResponseDto();
-        carroListagemDto.setCarros(getEntityModelCarroListagemDtoList());
-        carroListagemDto.setManufacturer(getCarroDto().getManufacturer());
-        return carroListagemDto;
+    public CarroListagemAgrupadaResponseDto getCarroListagemAgrupadaResponseDto(){
+        CarroListagemAgrupadaResponseDto carroListagemAgrupadaResponseDto = new CarroListagemAgrupadaResponseDto();
+        carroListagemAgrupadaResponseDto.setCarros(getEntityModelCarroListagemResponseDtoList());
+        carroListagemAgrupadaResponseDto.setManufacturer(getCarroRequestDto().getManufacturer());
+        return carroListagemAgrupadaResponseDto;
     }
-    public List<CarroListagemAgrupadaResponseDto> getCarroListagemAgrupadaDtoList(){
-        return Collections.singletonList(getCarroListagemAgrupadaDto());
-    }
-
-    public CarroFiltroRequestDto getCarroFiltroDto(){
-        CarroFiltroRequestDto carroFiltroDto = new CarroFiltroRequestDto();
-        carroFiltroDto.setName("Fusca");
-        carroFiltroDto.setManufacturer("Lamborghini");
-        carroFiltroDto.setYear(2024);
-        return carroFiltroDto;
+    public List<CarroListagemAgrupadaResponseDto> getCarroListagemAgrupadaResponseDtoList(){
+        return Collections.singletonList(getCarroListagemAgrupadaResponseDto());
     }
 
-    public CarroUpdateStatusRequestDto getCarroUpdateStatusDto() {
-        var carroUpdateStatusDto = new CarroUpdateStatusRequestDto();
-        carroUpdateStatusDto.setStatus(Status.DEACTIVATED);
-        carroUpdateStatusDto.setId(1L);
-        return carroUpdateStatusDto;
+    public CarroFiltroRequestDto getCarroFiltroRequestDto(){
+        CarroFiltroRequestDto carroFiltroRequestDto = new CarroFiltroRequestDto();
+        carroFiltroRequestDto.setName("Fusca");
+        carroFiltroRequestDto.setManufacturer("Lamborghini");
+        carroFiltroRequestDto.setYear(2024);
+        return carroFiltroRequestDto;
     }
 
-    public CarroListagemResponseDto getCarroListagemDto(){
-        var carroListagemDto = new CarroListagemResponseDto();
-        carroListagemDto.setId(1L);
-        carroListagemDto.setChassi("chassiDto1");
-        carroListagemDto.setStatus(Status.RENTED);
-        carroListagemDto.setName("Camaro");
-        carroListagemDto.setYear(2021);
-        carroListagemDto.setManufacturer("Chevrolet");
-        carroListagemDto.setColor("Amarelo");
-        carroListagemDto.setPlaca("placadto1");
-        return carroListagemDto;
-    }
-    public EntityModel<CarroListagemResponseDto> getEntityModelCarroListagemDto(){
-        return EntityModel.of(getCarroListagemDto());
+    public CarroUpdateStatusRequestDto getCarroUpdateStatusRequestDto() {
+        var carroUpdateStatusRequestDto = new CarroUpdateStatusRequestDto();
+        carroUpdateStatusRequestDto.setStatus(Status.DEACTIVATED);
+        carroUpdateStatusRequestDto.setId(1L);
+        return carroUpdateStatusRequestDto;
     }
 
-
-    public List<CarroListagemResponseDto> getCarroListagemDtoList() {
-        return Collections.singletonList(getCarroListagemDto());
+    public CarroListagemResponseDto getCarroListagemResponseDto(){
+        var carroListagemResponseDto = new CarroListagemResponseDto();
+        carroListagemResponseDto.setId(1L);
+        carroListagemResponseDto.setChassi("chassiDto1");
+        carroListagemResponseDto.setStatus(Status.RENTED);
+        carroListagemResponseDto.setName("Camaro");
+        carroListagemResponseDto.setYear(2021);
+        carroListagemResponseDto.setManufacturer("Chevrolet");
+        carroListagemResponseDto.setColor("Amarelo");
+        carroListagemResponseDto.setPlaca("placadto1");
+        return carroListagemResponseDto;
+    }
+    public EntityModel<CarroListagemResponseDto> getEntityModelCarroListagemResponseDto(){
+        return EntityModel.of(getCarroListagemResponseDto());
     }
 
-    public List<EntityModel<CarroListagemResponseDto>> getEntityModelCarroListagemDtoList() {
-        return Collections.singletonList(getEntityModelCarroListagemDto());
+
+    public List<CarroListagemResponseDto> getCarroListagemResponseDtoList() {
+        return Collections.singletonList(getCarroListagemResponseDto());
     }
 
-    public Optional<EntityModel<CarroListagemResponseDto>> getOptionalEntityModelCarroListagemDto(){
-        return Optional.of(getEntityModelCarroListagemDto());
+    public List<EntityModel<CarroListagemResponseDto>> getEntityModelCarroListagemResponseDtoList() {
+        return Collections.singletonList(getEntityModelCarroListagemResponseDto());
+    }
+
+    public Optional<EntityModel<CarroListagemResponseDto>> getOptionalEntityModelCarroListagemResponseDto(){
+        return Optional.of(getEntityModelCarroListagemResponseDto());
     }
 }
 

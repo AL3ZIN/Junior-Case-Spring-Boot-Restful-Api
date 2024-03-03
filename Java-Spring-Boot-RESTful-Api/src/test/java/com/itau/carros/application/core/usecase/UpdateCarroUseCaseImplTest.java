@@ -3,6 +3,7 @@ package com.itau.carros.application.core.usecase;
 import com.itau.carros.application.core.enums.Status;
 import com.itau.carros.application.core.exception.ConsultaNulaException;
 import com.itau.carros.application.core.model.Carro;
+import com.itau.carros.application.core.usecase.carro.UpdateCarroUseCaseImpl;
 import com.itau.carros.application.ports.out.CarroRepositoryPort;
 import com.itau.carros.mock.MockSingleton;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;

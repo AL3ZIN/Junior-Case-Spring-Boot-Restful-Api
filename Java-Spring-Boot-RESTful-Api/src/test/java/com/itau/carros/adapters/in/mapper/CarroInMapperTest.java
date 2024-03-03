@@ -1,6 +1,6 @@
 package com.itau.carros.adapters.in.mapper;
 
-import com.itau.carros.adapters.in.dto.CarroRequestDto;
+import com.itau.carros.adapters.in.dto.carro.CarroRequestDto;
 import com.itau.carros.application.core.model.Carro;
 import com.itau.carros.mock.MockSingleton;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,6 @@ import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
 import static org.springframework.beans.BeanUtils.copyProperties;
 
 @ExtendWith(MockitoExtension.class)
@@ -22,7 +21,7 @@ class CarroInMapperTest {
 
     @Test
     void deveConverterCarroDtoParaCarro(){
-        CarroRequestDto dto = mockSingleton.getCarroDto();
+        CarroRequestDto dto = mockSingleton.getCarroRequestDto();
 
         Carro model = mapper.toModel(dto);
 
@@ -31,7 +30,7 @@ class CarroInMapperTest {
 
     @Test
     void deveConverterCarroFiltroDtoParaCriteriosDeBusca(){
-        var dto = mockSingleton.getCarroFiltroDto();
+        var dto = mockSingleton.getCarroFiltroRequestDto();
 
         var model = mapper.toModel(dto);
 
@@ -40,7 +39,7 @@ class CarroInMapperTest {
 
     @Test
     void deveConverterAtributosDtoParaCarroListagemAgrupadaDto(){
-        var carros = mockSingleton.getEntityModelCarroListagemDtoList();
+        var carros = mockSingleton.getEntityModelCarroListagemResponseDtoList();
         var manufacturer = "Volvo";
 
         var model = mapper.toDto(manufacturer, carros);

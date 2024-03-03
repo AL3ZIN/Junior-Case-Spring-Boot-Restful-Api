@@ -1,8 +1,8 @@
 package com.itau.carros.application.core.usecase;
 
 import com.itau.carros.application.core.model.Carro;
-import com.itau.carros.application.core.validations.ValidacaoCadastroCarro;
-import com.itau.carros.application.core.validations.ValidacaoCarroJaCadastrado;
+import com.itau.carros.application.core.usecase.carro.CreateCarroUseCaseImpl;
+import com.itau.carros.application.core.validation.ValidacaoCarroJaCadastrado;
 import com.itau.carros.application.ports.out.CarroRepositoryPort;
 import com.itau.carros.mock.MockSingleton;
 import org.junit.jupiter.api.Test;

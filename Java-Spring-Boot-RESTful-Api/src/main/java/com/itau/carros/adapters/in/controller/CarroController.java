@@ -1,7 +1,8 @@
 package com.itau.carros.adapters.in.controller;
 
-import com.itau.carros.adapters.in.dto.*;
-import com.itau.carros.adapters.in.manager.CarroDataManager;
+import com.itau.carros.adapters.in.dto.carro.*;
+import com.itau.carros.adapters.in.service.CarroService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -13,16 +14,15 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 import java.util.Optional;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-
 @RestController
 @RequestMapping("api/carro")
-@Tag(name = "Carro", description = "Endpoints for Managing Carro")
+@SecurityRequirement(name = "bearer-key")
+@Tag(name = "Carro", description = "Endpoints para gerenciamento de carros.")
 public class CarroController {
 
-    private final CarroDataManager dataManager;
+    private final CarroService dataManager;
 
-    public CarroController(CarroDataManager dataManager) {
+    public CarroController(CarroService dataManager) {
         this.dataManager = dataManager;
     }
 

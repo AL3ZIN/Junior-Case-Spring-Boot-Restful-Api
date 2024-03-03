@@ -13,10 +13,24 @@ public class Carro {
     private Status status;
     private String placa;
 
+    public Carro() {
+    }
+
+    public Carro(Long id, String chassi, String name, String manufacturer, Integer year, String color, Status status, String placa) {
+        this.id = id;
+        this.chassi = chassi;
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.year = year;
+        this.color = color;
+        this.status = status;
+        this.placa = placa;
+    }
 
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }

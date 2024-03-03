@@ -20,3 +20,5 @@ springdoc:
     - /api/**
   swagger-ui:
     use-root-path: true
+secret:
+  key: ${JWT_SECRET:12345678}
