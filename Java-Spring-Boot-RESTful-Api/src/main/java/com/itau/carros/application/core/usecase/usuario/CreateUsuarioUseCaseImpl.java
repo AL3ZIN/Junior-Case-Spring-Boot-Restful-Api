@@ -1,6 +1,5 @@
 package com.itau.carros.application.core.usecase.usuario;
 
-import com.itau.carros.application.core.model.Carro;
 import com.itau.carros.application.core.model.Usuario;
 import com.itau.carros.application.core.validation.Validator;
 import com.itau.carros.application.ports.in.usuario.CreateUsuarioUseCasePort;

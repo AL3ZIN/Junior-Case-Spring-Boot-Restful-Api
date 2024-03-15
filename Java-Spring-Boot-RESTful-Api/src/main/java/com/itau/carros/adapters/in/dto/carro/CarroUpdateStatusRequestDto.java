@@ -10,6 +10,14 @@ public class CarroUpdateStatusRequestDto {
     @NotNull
     Status status;
 
+    public CarroUpdateStatusRequestDto() {
+    }
+
+    public CarroUpdateStatusRequestDto(Long id, Status status) {
+        this.id = id;
+        this.status = status;
+    }
+
     public Long getId() {
         return id;
     }

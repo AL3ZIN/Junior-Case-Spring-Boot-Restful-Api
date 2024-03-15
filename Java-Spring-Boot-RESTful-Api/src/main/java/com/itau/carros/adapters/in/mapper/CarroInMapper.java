@@ -11,35 +11,47 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import static org.springframework.beans.BeanUtils.copyProperties;
-
 @Component
 public class CarroInMapper {
 
     public Carro toModel(CarroRequestDto dto){
-        var model = new Carro();
-        copyProperties(dto,model);
-        return model;
+       return new Carro(
+                dto.getChassi(),
+                dto.getName(),
+                dto.getManufacturer(),
+                dto.getYear(),
+                dto.getColor(),
+                dto.getStatus(),
+                dto.getPlaca()
+        );
     }
 
     public CarroListagemResponseDto toDto(Carro model) {
-        var dto = new CarroListagemResponseDto();
-        copyProperties(model, dto);
-        return dto;
+        return new CarroListagemResponseDto(
+                model.getId(),
+                model.getChassi(),
+                model.getName(),
+                model.getManufacturer(),
+                model.getYear(),
+                model.getColor(),
+                model.getStatus(),
+                model.getPlaca()
+        );
     }
 
 
     public CarroListagemAgrupadaResponseDto toDto(String manufacturer, List<EntityModel<CarroListagemResponseDto>> carros){
-        var dto = new CarroListagemAgrupadaResponseDto();
-        dto.setManufacturer(manufacturer);
-        dto.setCarros(carros);
-        return dto;
+        return new CarroListagemAgrupadaResponseDto(
+                manufacturer,
+                carros
+        );
     }
 
     public CriteriosDeBusca toModel(CarroFiltroRequestDto dto) {
-        var model = new CriteriosDeBusca();
-        copyProperties(dto, model);
-        System.out.println(model);
-        return model;
+        return new CriteriosDeBusca(
+                dto.getName(),
+                dto.getManufacturer(),
+                dto.getYear()
+        );
     }
 }

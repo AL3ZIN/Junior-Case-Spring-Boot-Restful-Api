@@ -2,7 +2,6 @@ package com.itau.carros.adapters.in.dto.usuario;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public class UsuarioLoginRequestDto {
@@ -14,6 +13,14 @@ public class UsuarioLoginRequestDto {
     @NotBlank
     @Size(min = 6, max = 20, message = "Senha tem que estar entre 6 e 20 caracteres")
     private String senha;
+
+    public UsuarioLoginRequestDto() {
+    }
+
+    public UsuarioLoginRequestDto(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
+    }
 
     public String getEmail() {
         return email;

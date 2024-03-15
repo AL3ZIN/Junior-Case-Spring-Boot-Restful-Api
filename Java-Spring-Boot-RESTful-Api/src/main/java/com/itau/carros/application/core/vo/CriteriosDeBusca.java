@@ -5,6 +5,14 @@ public class CriteriosDeBusca {
     private String manufacturer;
     private Integer year;
 
+    public CriteriosDeBusca(){}
+
+    public CriteriosDeBusca(String name, String manufacturer, Integer year) {
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.year = year;
+    }
+
     public String getName() {
         return name;
     }

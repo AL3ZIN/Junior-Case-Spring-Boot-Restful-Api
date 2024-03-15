@@ -4,6 +4,8 @@ public class UsuarioTokenResponseDto {
 
     private String token;
 
+    public UsuarioTokenResponseDto(){}
+
     public UsuarioTokenResponseDto(String token) {
         this.token = token;
     }

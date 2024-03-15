@@ -1,6 +1,5 @@
-package com.itau.carros.application.core.usecase;
+package com.itau.carros.application.core.usecase.carro;
 
-import com.itau.carros.application.core.usecase.carro.DeleteCarroUseCaseImpl;
 import com.itau.carros.application.ports.out.CarroRepositoryPort;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

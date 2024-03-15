@@ -1,59 +1,126 @@
 package com.itau.carros.adapters.in.mapper;
 
+import com.itau.carros.adapters.in.dto.carro.CarroFiltroRequestDto;
+import com.itau.carros.adapters.in.dto.carro.CarroListagemResponseDto;
 import com.itau.carros.adapters.in.dto.carro.CarroRequestDto;
+import com.itau.carros.application.core.enums.Status;
 import com.itau.carros.application.core.model.Carro;
-import com.itau.carros.mock.MockSingleton;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.hateoas.EntityModel;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.springframework.beans.BeanUtils.copyProperties;
+import java.util.List;
 
-@ExtendWith(MockitoExtension.class)
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class CarroInMapperTest {
 
-    @InjectMocks
-    CarroInMapper mapper;
 
-    MockSingleton mockSingleton = MockSingleton.getInstance();
+    private CarroInMapper carroInMapper;
+    private CarroRequestDto carroRequestDto;
+    private CarroFiltroRequestDto carroFiltroRequestDto;
+    private CarroListagemResponseDto carroListagemResponseDto;
+    private Carro carro;
 
-    @Test
-    void deveConverterCarroDtoParaCarro(){
-        CarroRequestDto dto = mockSingleton.getCarroRequestDto();
+    @BeforeEach
+    public void setUp() {
+        carroInMapper = new CarroInMapper();
+        carroRequestDto = new CarroRequestDto(
+                "chassiDto1",
+                "Camaro",
+                "Chevrolet",
+                2021,
+                "Amarelo",
+                Status.RENTED,
+                "placadto1"
+        );
 
-        Carro model = mapper.toModel(dto);
+        carroFiltroRequestDto = new CarroFiltroRequestDto(
+                "testefiltro",
+                "fabricantetestefiltro",
+                2023
+        );
 
-        assertEquals(dto.getChassi(), model.getChassi());
+        carroListagemResponseDto = new CarroListagemResponseDto(
+                1L,
+                "chassilistagem1",
+                "Fusca",
+                "Volkswagen",
+                2023,
+                "Azul",
+                Status.ACTIVATED,
+                "placalistagem1"
+        );
+
+        carro = new Carro(
+                "chassi1",
+                "Fusca",
+                "Volkswagen",
+                2023,
+                "Azul",
+                Status.ACTIVATED,
+                "placa1"
+        );
     }
 
     @Test
-    void deveConverterCarroFiltroDtoParaCriteriosDeBusca(){
-        var dto = mockSingleton.getCarroFiltroRequestDto();
+    void deveConverterCarroDtoParaCarro() {
 
-        var model = mapper.toModel(dto);
+        Carro model = carroInMapper.toModel(carroRequestDto);
 
-        assertEquals(dto.getManufacturer(), model.getManufacturer());
+        assertAll(
+                () -> assertEquals(carroRequestDto.getChassi(), model.getChassi()),
+                () -> assertEquals(carroRequestDto.getName(), model.getName()),
+                () -> assertEquals(carroRequestDto.getManufacturer(), model.getManufacturer()),
+                () -> assertEquals(carroRequestDto.getYear(), model.getYear()),
+                () -> assertEquals(carroRequestDto.getColor(), model.getColor()),
+                () -> assertEquals(carroRequestDto.getStatus(), model.getStatus()),
+                () -> assertEquals(carroRequestDto.getPlaca(), model.getPlaca())
+        );
     }
 
     @Test
-    void deveConverterAtributosDtoParaCarroListagemAgrupadaDto(){
-        var carros = mockSingleton.getEntityModelCarroListagemResponseDtoList();
+    void deveConverterCarroFiltroDtoParaCriteriosDeBusca() {
+
+        var model = carroInMapper.toModel(carroFiltroRequestDto);
+
+        assertAll(
+                () -> assertEquals(carroFiltroRequestDto.getName(), model.getName()),
+                () -> assertEquals(carroFiltroRequestDto.getManufacturer(), model.getManufacturer()),
+                () -> assertEquals(carroFiltroRequestDto.getYear(), model.getYear())
+        );
+    }
+
+    @Test
+    void deveConverterAtributosParaCarroListagemAgrupadaDto() {
         var manufacturer = "Volvo";
+        var carros = List.of(EntityModel.of(carroListagemResponseDto));
 
-        var model = mapper.toDto(manufacturer, carros);
+        var dto = carroInMapper.toDto(manufacturer, carros);
 
-        assertEquals(manufacturer, model.getManufacturer());
+        assertAll(
+                () -> assertEquals(manufacturer, dto.getManufacturer()),
+                () -> assertEquals(carros, dto.getCarros())
+        );
+
     }
 
     @Test
-    void deveConverterCarroParaCarroListagemDto(){
-        var model = mockSingleton.getCarro();
+    void deveConverterCarroParaCarroListagemDto() {
 
-        var dto = mapper.toDto(model);
+        var dto = carroInMapper.toDto(carro);
 
-        assertEquals(model.getChassi(), dto.getChassi());
+        assertAll(
+                () -> assertEquals(carro.getId(), dto.getId()),
+                () -> assertEquals(carro.getChassi(), dto.getChassi()),
+                () -> assertEquals(carro.getName(), dto.getName()),
+                () -> assertEquals(carro.getManufacturer(), dto.getManufacturer()),
+                () -> assertEquals(carro.getYear(), dto.getYear()),
+                () -> assertEquals(carro.getColor(), dto.getColor()),
+                () -> assertEquals(carro.getStatus(), dto.getStatus()),
+                () -> assertEquals(carro.getPlaca(), dto.getPlaca())
+        );
     }
 
 }

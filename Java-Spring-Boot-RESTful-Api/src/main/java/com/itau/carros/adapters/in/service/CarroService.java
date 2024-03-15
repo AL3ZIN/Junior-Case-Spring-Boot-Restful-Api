@@ -55,7 +55,7 @@ public class CarroService {
     }
 
     public Optional<EntityModel<CarroListagemResponseDto>> detalhar(Long id){
-        return Optional.ofNullable(getCarroUseCasePort.detalhar(id))
+        return Optional.of(getCarroUseCasePort.detalhar(id))
                 .map(mapper::toDto)
                 .map(assembler::toModel);
     }
@@ -76,7 +76,7 @@ public class CarroService {
     }
 
 
-    private CarroListagemAgrupadaResponseDto criarCarroListagemAgrupadaDto(String manufacturer, List<EntityModel<CarroListagemResponseDto>> carrosModel) {
+    public CarroListagemAgrupadaResponseDto criarCarroListagemAgrupadaDto(String manufacturer, List<EntityModel<CarroListagemResponseDto>> carrosModel) {
         // Ordena os carros por nome e depois por ano em ordem decrescente, mantendo a estrutura EntityModel
         List<EntityModel<CarroListagemResponseDto>> sortedCarros = carrosModel.stream()
                 .sorted(Comparator.comparing((EntityModel<CarroListagemResponseDto> em) -> em.getContent().getName())

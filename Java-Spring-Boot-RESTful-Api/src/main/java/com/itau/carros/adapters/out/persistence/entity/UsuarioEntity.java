@@ -1,10 +1,6 @@
 package com.itau.carros.adapters.out.persistence.entity;
 
 import jakarta.persistence.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import java.util.Collection;
 
 @Entity
 @Table(name = "usuario")
@@ -16,6 +12,14 @@ public class UsuarioEntity{
     private String email;
     private String senha;
     private String nome;
+
+    public UsuarioEntity(){}
+
+    public UsuarioEntity(String email, String senha, String nome) {
+        this.email = email;
+        this.senha = senha;
+        this.nome = nome;
+    }
 
     public Long getId() {
         return id;

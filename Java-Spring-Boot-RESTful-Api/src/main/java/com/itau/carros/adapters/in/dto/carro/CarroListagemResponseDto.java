@@ -14,6 +14,19 @@ public class CarroListagemResponseDto extends RepresentationModel<CarroListagemR
     private Status status;
     private String placa;
 
+    public CarroListagemResponseDto(){}
+
+    public CarroListagemResponseDto(Long id, String chassi, String name, String manufacturer, Integer year, String color, Status status, String placa) {
+        this.id = id;
+        this.chassi = chassi;
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.year = year;
+        this.color = color;
+        this.status = status;
+        this.placa = placa;
+    }
+
     public Long getId() {
         return id;
     }

@@ -5,6 +5,14 @@ public class CarroFiltroRequestDto {
     private String manufacturer;
     private Integer year;
 
+    public CarroFiltroRequestDto(){}
+
+    public CarroFiltroRequestDto(String name, String manufacturer, Integer year) {
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.year = year;
+    }
+
     public String getName() {
         return name;
     }

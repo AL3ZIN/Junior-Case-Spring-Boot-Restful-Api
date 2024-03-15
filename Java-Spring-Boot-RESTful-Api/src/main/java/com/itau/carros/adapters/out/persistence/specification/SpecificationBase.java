@@ -6,7 +6,6 @@ import org.springframework.data.jpa.domain.Specification;
 
 public abstract class SpecificationBase<E, C> {
 
-    // Método protegido para ser implementado pelas subclasses, criando Specifications sem considerar 'ativo'
     protected abstract Specification<E> criarSpecification(C criterios);
 
 

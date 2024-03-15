@@ -1,12 +1,9 @@
 package com.itau.carros.adapters.in.service;
 
-import com.itau.carros.adapters.in.dto.usuario.UsuarioLoginRequestDto;
 import com.itau.carros.adapters.in.mapper.SecurityMapper;
-import com.itau.carros.adapters.in.mapper.UsuarioInMapper;
 import com.itau.carros.adapters.out.security.TokenService;
 import com.itau.carros.application.core.model.Usuario;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
 
 @Service

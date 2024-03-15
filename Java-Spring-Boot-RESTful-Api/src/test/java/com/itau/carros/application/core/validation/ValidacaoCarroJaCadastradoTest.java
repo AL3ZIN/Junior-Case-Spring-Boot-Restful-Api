@@ -16,17 +16,17 @@ import static org.mockito.Mockito.*;
 class ValidacaoCarroJaCadastradoTest {
 
     @InjectMocks
-    ValidacaoCarroJaCadastrado validacaoCarroJaCadastrado;
+    private ValidacaoCarroJaCadastrado validacaoCarroJaCadastrado;
 
     @Mock
     private CarroRepositoryPort carroRepositoryPort;
 
     @Mock
-    Carro carro;
+    private Carro carro;
 
 
     @Test
-    void devePermitirCadastroDeCarroNaoCadastrado(){
+    void devePermitirCadastroQuandoCarroNaoEstaCadastrado(){
 
         //ARRANGE
         when(carroRepositoryPort.existsByChassiAndPlacaAndAtivoTrue(carro.getChassi(), carro.getPlaca()))
@@ -38,14 +38,15 @@ class ValidacaoCarroJaCadastradoTest {
     }
 
     @Test
-    void naoDevePermitirCadastroDeCarroJaCadastrado(){
+    void naoDevePermitirCadastroDeCarroQuandoCarroJaEstaCadastrado(){
 
         //ARRANGE
         when(carroRepositoryPort.existsByChassiAndPlacaAndAtivoTrue(carro.getChassi(), carro.getPlaca()))
                 .thenReturn(true);
 
         //ACT + ASSERT
-        assertThrows(UnicidadeException.class,() -> validacaoCarroJaCadastrado.validar(carro));
+        var exception = assertThrows(UnicidadeException.class,() -> validacaoCarroJaCadastrado.validar(carro));
+        assertEquals("Carro ja cadastrado em nosso banco de dados.", exception.getMessage());
         verify(carroRepositoryPort, times(1)).existsByChassiAndPlacaAndAtivoTrue(carro.getChassi(), carro.getPlaca());
     }
 }

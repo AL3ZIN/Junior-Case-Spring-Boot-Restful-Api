@@ -20,6 +20,19 @@ public class CarroEntity {
     private String placa;
     private boolean ativo = true;
 
+    public CarroEntity() {
+    }
+
+    public CarroEntity(String chassi, String name, String manufacturer, Integer year, String color, Status status, String placa) {
+        this.chassi = chassi;
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.year = year;
+        this.color = color;
+        this.status = status;
+        this.placa = placa;
+    }
+
     public Long getId() {
         return id;
     }

@@ -15,7 +15,15 @@ public class Carro {
 
     public Carro() {
     }
-
+    public Carro( String chassi, String name, String manufacturer, Integer year, String color, Status status, String placa) {
+        this.chassi = chassi;
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.year = year;
+        this.color = color;
+        this.status = status;
+        this.placa = placa;
+    }
     public Carro(Long id, String chassi, String name, String manufacturer, Integer year, String color, Status status, String placa) {
         this.id = id;
         this.chassi = chassi;

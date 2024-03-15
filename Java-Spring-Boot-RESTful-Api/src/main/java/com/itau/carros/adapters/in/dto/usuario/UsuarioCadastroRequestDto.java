@@ -17,6 +17,14 @@ public class UsuarioCadastroRequestDto {
     @Size(min = 6, max = 20, message = "Senha tem que estar entre 6 e 20 caracteres")
     private String senha;
 
+    public UsuarioCadastroRequestDto(){}
+
+    public UsuarioCadastroRequestDto(String email, String nome, String senha) {
+        this.email = email;
+        this.nome = nome;
+        this.senha = senha;
+    }
+
     public String getEmail() {
         return email;
     }

@@ -4,21 +4,32 @@ import com.itau.carros.adapters.out.persistence.entity.CarroEntity;
 import com.itau.carros.application.core.model.Carro;
 import org.springframework.stereotype.Component;
 
-import static org.springframework.beans.BeanUtils.copyProperties;
-
 @Component
 public class CarroOutMapper {
 
-    public CarroEntity toEntity(Carro model){
-        var entity = new CarroEntity();
-        copyProperties(model,entity);
-        return entity;
+    public CarroEntity toEntity(Carro model) {
+        return new CarroEntity(
+                model.getChassi(),
+                model.getName(),
+                model.getManufacturer(),
+                model.getYear(),
+                model.getColor(),
+                model.getStatus(),
+                model.getPlaca()
+        );
     }
 
-    public Carro toModel(CarroEntity entity){
-        var carro = new Carro();
-        copyProperties(entity, carro);
-        return carro;
+    public Carro toModel(CarroEntity entity) {
+        return new Carro(
+                entity.getId(),
+                entity.getChassi(),
+                entity.getName(),
+                entity.getManufacturer(),
+                entity.getYear(),
+                entity.getColor(),
+                entity.getStatus(),
+                entity.getPlaca()
+        );
     }
 
 }

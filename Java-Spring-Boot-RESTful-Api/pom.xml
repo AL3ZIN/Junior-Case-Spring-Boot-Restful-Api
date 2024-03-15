@@ -100,16 +100,19 @@
 				<configuration>
 					<excludes>
 						<exclude>**/CarrosApplication.*</exclude>
+						<exclude>**/*$*</exclude>
 						<exclude>**/config/*</exclude>
 						<exclude>**/model/*</exclude>
 						<exclude>**/filter/*</exclude>
 						<exclude>**/enums/*</exclude>
 						<exclude>**/entity/*</exclude>
-						<exclude>**/dto/*</exclude>
+						<exclude>**/dto/**/*.*</exclude>
 						<exclude>**/response/*</exclude>
 						<exclude>**/vo/*</exclude>
 						<exclude>**/springdoc/**</exclude>
 						<exclude>**/controller/**/*$$*</exclude>
+						<exclude>**/swagger/**/*.*</exclude>
+						<exclude>**/springframework/**/*.*</exclude>
 					</excludes>
 				</configuration>
 

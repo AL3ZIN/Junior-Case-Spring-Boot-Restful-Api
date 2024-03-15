@@ -8,6 +8,13 @@ public class CarroListagemAgrupadaResponseDto {
     private String manufacturer;
     private List<EntityModel<CarroListagemResponseDto>> carros;
 
+    public CarroListagemAgrupadaResponseDto(){}
+
+    public CarroListagemAgrupadaResponseDto(String manufacturer, List<EntityModel<CarroListagemResponseDto>> carros) {
+        this.manufacturer = manufacturer;
+        this.carros = carros;
+    }
+
     public String getManufacturer() {
         return manufacturer;
     }
